@@ -83,7 +83,7 @@ class StereoPair(object):
         Get current left and right frames from a single image,
         by splitting the image in half.
         """
-        frame = self.captures[0].read()[1]
+        frame = np.rot90(self.captures[0].read()[1])
         height, width, colors = frame.shape
         left_frame = frame[:, :width/2, :]
         right_frame = frame[:, width/2:, :]
