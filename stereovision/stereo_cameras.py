@@ -31,6 +31,8 @@ Classes:
 
 import cv2
 
+import numpy as np
+
 from stereovision.point_cloud import PointCloud
 
 
@@ -74,7 +76,7 @@ class StereoPair(object):
 
     def get_frames(self):
         """Get current frames from cameras."""
-        return [capture.read()[1] for capture in self.captures]
+        return [np.rot90(capture.read()[1]) for capture in self.captures]
 
     def get_frames_singleimage(self):
         """
