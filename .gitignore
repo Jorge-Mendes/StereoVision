@@ -3,4 +3,4 @@ StereoVision.egg-info/
 external/
 *.pyc
 *~
-z_output_z/*
+output/*
